@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">       
+    <link rel="stylesheet" href="./css/main-config.css">    
+    <link rel="stylesheet" href="./css/style.css">  
+    <link rel="stylesheet" href="./css/icons.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="./img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="./img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">  
+    <title>Romanova</title>
+  </head>
+  <body class="night" onload="showPage()">
+
+    <div id="loader">
+      <div class="icon angle-border-top">
+        <i class="icon-finger"></i>
+        <span class="light"></span>
+      </div>
+    </div>
+
+    <div id="container">
+      
+        <div class="logo angle-border-top">Romanova</div>
+
+        <div class="soc-menu">
+            <div id="menu-toggle" onclick="toogleMenu()">
+              <i class="icon-menu"></i>
+            </div>              
+            <div class="menu-item">
+              <a class="icon-mail" href="mailto:romanova.ksu15@gmail.com"></a>
+            </div>
+            <div class="menu-item ">
+              <a class="icon-phone" href="tel:380684243997"></a>
+            </div>
+            <div class="menu-item ">
+              <a class="icon-telegram" href="tg://resolve?domain=ksuromanova"></a>
+            </div>
+            <div class="menu-item ">
+              <a class="icon-github" href="//github.com/ksuromanova"></a>
+            </div>   
+            <div class="menu-item " >
+              <a class="icon-skype" href="skype:+380684243997"></a>
+          </div>         
+            <div class="menu-item " onclick="changeTheme()">
+                <span class="icon-lamp"></span>
+            </div>            
+        </div>      
+
+      <div class="main-content">
+       
+            <div id="menu">
+                <ul>
+                    <li onclick="displayData(this)" class="active">
+                      <h2>Personal data</h2>
+                    </li>
+                    <li onclick="displayData(this)">
+                      <h2>Education</h2>
+                    </li>
+                    <li onclick="displayData(this)">
+                      <h2>Work experience</h2>
+                      </li>
+                    <li onclick="displayData(this)">
+                      <h2>Skills</h2>
+                    </li>
+                    <li onclick="displayData(this)">
+                      <h2>Exemples</h2>
+                    </li>
+                </ul>
+              </div>
+  
+          <div class="circle">           
+              <div class="icon-circle3">              
+              </div>
+          </div>      
+
+        <div id="data">
+            <!--Personal data block-->
+          <section class="active">
+              <h1>Personal data</h1>               
+              <h3><b>Name:</b>Romanova Ksenia</h3>           
+              <h3><b>Age:</b>22</h3>  
+              <h3><b>Personal skills:</b>
+              <ul>
+                <li>Responsible</li>
+                <li>Disciplined</li>
+                <li>Analytical</li>
+              </ul>
+              </h3> 
+              <h3><b>English level:</b>B1</h3>                    
+              <h3><b>Claim position:</b>Junior front-end разработчик, HTML-coder</h3>
+              <h3><b>Target:</b>Doing what I love — and getting paid for it!</h3>                  
+            </section>
+
+            <!--Education block-->
+            <section>
+              <h1>Education</h1>
+              <div class="text-center">
+               <i class="logos"><span class="blue-light">Zaporizhzhya National University </span></i>
+              </div>              
+              <h3><b>Study period:</b>2013 - 2017</h3>
+              <h3><b>Diploma:</b>Bachelor`s diploma with honours</h3>  
+              <h3><b>Education:</b> full-time tuition</h3> 
+              <h3><b>Program Subject Area:</b> Software engineering.</h3>  
+              <h3><b>Qualification:</b>Specialist of Developing and Testing Software</h3>              
+            </section>
+
+             <!--Work experience block-->                 
+             <section>
+               <h1>Work experience</h1>
+               <div class="text-center ">
+                  <i class="logos"><span class="blue">Insure.</span><span class="green">Travel</span></i>
+                </div>              
+               <h3><b>Position:</b>Layouts / Content-manager</h3>
+               <h3><b>Work period:</b>august 2017 - july 2018</h3>
+               <div class="text-center margin-top">
+                 <i class="logos">Fin<span class="red">.</span>Software</i>
+               </div>              
+               <h3><b>Position:</b>Layouts, Senior Front-end Developer Assistant</h3>
+               <h3><b>Work period:</b>september - october 2018</h3>
+            </section>
+
+             <!--Skills block--> 
+             <section>
+               <h1>Skills</h1>
+               <h3><b>Main:</b></h3>
+               <div class="radials">
+                <div class="progress-circle over50 p95">
+                  <span>HTML</span>
+                  <div class="left-half-clipper">
+                     <div class="first50-bar"></div>
+                     <div class="value-bar"></div>
+                  </div>
+                </div>
+                <div class="progress-circle over50 p90">
+                  <span>CSS</span>
+                  <div class="left-half-clipper">
+                    <div class="first50-bar"></div>
+                    <div class="value-bar"></div>
+                  </div>
+                </div>
+                <div class="progress-circle over50 p70">
+                  <span>JS</span>
+                  <div class="left-half-clipper">
+                    <div class="first50-bar"></div>
+                    <div class="value-bar"></div>
+                  </div>
+                </div>           
+               </div>              
+               <h3><b>Other:</b></h3>
+               <ul class="tags">
+                 <li>#Vue</li>
+                 <li>#Webpack</li>
+                 <li>#NPM</li>
+                 <li>#Git</li>
+                 <li>#SASS/SCSS</li>
+                 <li>#Flexbox</li>                 
+                 <li>#Bootstrap4</li>
+                 <li>#Icon Fonts</li>               
+                 <li>#Googling</li>
+               </ul>                              
+             </section>
+
+             <!--Exemples block--> 
+             <section>
+               <h1>Exemples</h1>
+               <div class="cards">
+                 <div class="cardItem wine">                                      
+                     <h4>WineShop</h4>
+                     <p><a href="https://ksu-vue-shop.firebaseapp.com/">Demo</a> | 
+                      <a href="https://github.com/ksuromanova/vue-localStorage-shop">Github</a></p>                                     
+                 </div>
+                 <div class="cardItemText angle-border-top">
+                    <p>Test task, whose essence : </p>
+                    <em>simple SPA application, simulation online shop (Vue.js)</em>
+                 </div>
+               </div>
+             </section>
+        </div>
+      
+    </div>
+  </div>
+    
+    <script src="./js/main.min.js"></script>    
+  </body>
+</html>

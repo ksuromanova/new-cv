@@ -1,0 +1,398 @@
+@import 'mixins.scss';
+@import 'elements.scss';
+
+#container {
+	display: none;
+	@include theme-color(background-color, $color-bg);
+	@include theme-color(background-image, $bg-greed);	
+	background-size:80px 80px;
+	@include theme-color(color, $color-text);	
+	
+	.logo {
+		font-size: 1.5rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		padding: 1rem 0;
+		position: absolute;
+		left: 1rem;
+		top: 1rem;
+	}	
+
+	.soc-menu {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index:1;
+		color: $color-white;
+		#menu-toggle {
+			padding: .75rem;
+			width: 2.5rem;
+			height: 2.5rem;
+			text-align: center;
+			background-color: $color-light;			
+			border-radius: 50%;
+			cursor: pointer;
+			transition: 0.5s;
+			i {
+				line-height: 2.5rem;				
+			}
+			&.open {				
+				transform: rotate(270deg);
+				transition: 0.7s;				
+			}
+		}
+		.menu-item {
+			position: absolute;
+			top:1rem;
+			right:1rem;
+			z-index:-1;
+			transition: 0.7s;			
+
+			&.open {						
+				padding: .3rem;
+				width: 1.6rem;
+				height: 1.6rem;
+				text-align: center;
+				background-color: $color-light;
+				border-radius: 50%;
+				cursor: pointer;
+				transition: top .5s;
+				a, span {
+					line-height: 1.6rem;	
+				}
+				&:nth-child(2){
+					right: 5rem;
+					top: 0;	
+					transition-delay:0.05s;				
+				}
+				&:nth-child(3){
+					right: 4.5rem;
+    				top: 2.5rem;
+					transition-delay:0.1s;
+				}
+				&:nth-child(4){
+					right: 2.7rem;
+    				top: 4.5rem;
+					transition-delay:0.2s;
+				}
+				&:nth-child(5){
+					right:0;
+					top:5rem;
+					transition-delay:0.3s;
+				}
+				&:nth-child(6){
+					right: 0;
+					top: 8rem;	
+					transition-delay:0.4s;				
+				}
+				&:nth-child(7){
+					right: 0;
+    				top: 11rem;
+					transition-delay:0.5s;
+				}				
+			}
+		}
+	}
+	
+	.main-content {
+		display: flex;
+		justify-content: center;		
+		align-items: center;		
+		padding: 0 3rem;
+		min-height:100vh;
+		transition: all 2s linear;
+		.circle {								
+			position: relative;	
+			transition: 1s;	
+			div {
+				position: relative;				
+				font-size: 20rem;
+				color: $color-light;							
+				animation: cog 8s infinite;				
+				animation-timing-function: linear;
+				@keyframes cog {
+					100%{ 						
+						transform: rotate(360deg)
+					}
+				}				
+			}					
+		}	
+
+		#menu {
+			margin: 1.5rem;
+			text-transform: uppercase;
+			max-width: 40vw;			
+			li {
+				padding-bottom: 1vh;
+				margin-bottom: 4vh;
+				border-bottom: 2px solid;
+				position: relative;
+				border-bottom-color: $color-light;
+				cursor: pointer;
+				&:first-child,
+				&:last-child {
+					&:after {
+						content: "";
+						position: absolute;						
+						width: 2px;
+						height: 3rem;
+						background-color: $color-light;	
+					}						
+				}					
+				&:first-child {
+					&:after {	
+						right: -1rem;	
+						bottom: -2.6rem;					
+						transform: rotate(-45deg);
+					}
+				}				
+				&:last-child {
+					&:after {							
+						transform: rotate(45deg);
+						bottom: -.5rem;
+						right: -1.1rem;
+					}
+				}
+				h2 {						
+					padding-left: 2rem;
+				}
+				&:before {
+					content: "";
+					position: absolute;	
+					top: -.25rem;
+					left: 0; 
+					width: 1.5rem;
+					height: 1.5rem;
+					opacity: 1;
+					border-radius: 50%;
+					background-color: $color-light;
+					background: radial-gradient(circle closest-side, $color-light, transparentize($color-light, 0.7),transparentize($color-light, 0.2));					
+				}
+				&.active:before {
+					animation: pulse 1s linear infinite;
+					box-shadow: inset 0px 0px 15px 10px rgba(71,91,115,0.41);
+					@keyframes pulse{
+						0%{							
+							-webkit-transform: scale(.6);							
+							opacity: 0;							
+						}							
+						50%{							
+							-webkit-transform: scale(.9);							
+							opacity: 0.3;							
+						}							
+						60%{							
+							-webkit-transform: scale(1.1);
+							opacity: .6;							
+						}							
+						70%{							
+							-webkit-transform: scale(1.3);
+							opacity: .85;							
+						}							
+						80%{							
+							-webkit-transform: scale(1.4);
+							opacity: .6;							
+						}							
+						100%{							
+							-webkit-transform: scale(1.6);
+							opacity: 0;							
+						}							
+					}
+				}
+			}	
+		}
+		#data {
+			display: flex;
+			max-width: 32rem;				
+			section {
+				display: none;	
+				padding: 1.5rem;				
+				opacity: 0; 
+				animation: fadeInLeft 1s ease-in-out 0s forwards;				
+				@keyframes fadeInLeft {
+					from { 
+						opacity: 0;
+						-webkit-transform: translate3d(-10%, 0, 0);
+						transform: translate3d(-10%, 0, 0);
+					}
+					
+					to {
+						opacity: 1;
+						-webkit-transform: none;
+						transform: none;
+					}
+				}				  
+			}			
+			section.active {					
+				display: block;
+					
+				h1,b {
+					text-transform: uppercase;
+					font-weight: 500;
+					color: $color-light;										
+				}
+				h1 {
+					font-size: 2rem;
+					padding-bottom: 1vh;
+					border-bottom: 2px solid $color-light;
+					position: relative;
+					@include theme-color(color, $color-text);
+					margin-bottom: 1.5rem;
+					&:before {
+						content: "";
+						position: absolute;
+						width: 3.5rem;
+						height: 2px;
+						background-color: $color-light;
+						left: -3rem;
+						bottom: -1.3rem;
+						transform: rotate(-45deg);
+					}					
+				}
+				b {
+					margin-right: 1rem;
+					line-height: 2rem;
+				}
+				li {
+					list-style-type: disc;
+					margin-left: 1.5rem;
+				}	
+				.radials {
+					display: flex;
+					flex-wrap: wrap;
+				}
+				.tags {
+					display: flex;
+					flex-wrap: wrap;
+					li {
+						padding: .3rem .2rem;
+						border: 1px solid $color-light;
+						list-style-type: none;
+						margin: .3rem;
+					}					
+				}
+				.cards {
+					display: flex;
+					flex-wrap: wrap;
+					.cardItem {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						flex-direction: column;
+						border: 2px solid $color-light;
+						border-radius: .3rem;
+						width: 10rem;
+						height: 14rem;
+						margin: 1.5rem;						
+						h4 {
+							text-transform: uppercase;
+							font-size: 1.5rem;
+							margin-bottom: .5rem;
+							position: relative;
+							&:after {
+								content: "";
+								position: absolute;
+								bottom: -.3rem;
+								left:2rem;
+								width: 50%;
+								height: 2px;
+								background-color: $color-light;
+							}
+						}
+					}					
+					.wine {
+						@include theme-color(background-color, $color-bg);						
+						background-size: cover;
+					}
+					.cardItemText {						
+						position: relative;
+						width: 8rem;						
+						margin: 1.5rem;	
+						padding: 1rem;	
+					}
+				}	
+				.text-center {
+					text-align: center;				
+					i {
+						font-size: 8vw;
+					}								
+					.logos {
+						font-size: 2rem;						
+						text-transform: uppercase;
+						font-weight: 500;
+						.blue-light {
+							color: #337ab7;
+							font-family: serif;
+						}
+						.blue {
+							color: #0054a6;
+						}
+						.green {
+							color: #73e53e;
+						}
+						.red {
+							color: red;							
+						}						
+					}							
+				}
+				.margin-top {
+					margin-top: 1.9rem;
+				}
+			}
+		}
+			
+		@media(max-width: 880px) {
+			padding: 0;			
+			padding-top: 4.5rem;
+			.circle {
+				div {
+					font-size: 15rem;
+				}
+			}
+			#menu {				
+				li {
+					margin-bottom: 3vh;					
+				}				
+			}
+		}
+		@media(max-width: 660px) {
+			flex-wrap: wrap;			
+			.circle {
+				overflow: hidden;
+			}
+			section.active {
+				h1:before {
+					width: 6.9rem !important;
+					transform: rotate(45deg) !important;
+					left: unset !important;
+					right: -1rem !important;
+					bottom: 2.3rem !important;
+				}
+			}
+		}
+		@media(max-width: 460px) {
+			#menu {				
+				max-width: 60vw;
+				margin-bottom: 0;				
+			}
+			.circle {
+				div {
+					font-size: calc(40vw - 3rem);
+				}
+			}			
+			section.active {				
+				h1:before {
+					width: 9.3rem !important;
+					transform: rotate(90deg) !important;					
+					right: -4.7rem !important;
+					bottom: 4.5rem !important;
+				}
+			}
+		}
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			height: 100vh;
+			#data {
+				max-width: none;
+			}
+		 }		
+	}
+}  

@@ -1,0 +1,31 @@
+$color-white: #fff;
+$color-black: #000d16;
+$color-light: #01fefb;
+$bg-day-greed: linear-gradient(0deg, transparent 24%, rgba(0, 0, 0 , 0.05) 25%, rgba(0, 0, 0 , .05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0 , .05) 75%, rgba(0, 0, 0 , .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 0, 0 , .05) 25%, rgba(0, 0, 0 , .05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0 , .05) 75%, rgba(0, 0, 0 , .05) 76%, transparent 77%, transparent);
+$bg-night-greed: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, .02) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .02) 75%, rgba(255, 255, 255, .02) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .02) 25%, rgba(255, 255, 255, .02) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .02) 75%, rgba(255, 255, 255, .02) 76%, transparent 77%, transparent);
+$default-size: 1em;
+$label-font-size: $default-size / 4;
+$label-font-size-redo: $default-size * 4;
+
+$color-bg: (
+  day: $color-white,
+  night: $color-black
+);
+
+$bg-greed: (
+  day: $bg-day-greed,
+  night: $bg-night-greed
+);
+
+$color-text: (
+  day: $color-black,
+  night: $color-white
+);
+// @include theme-color(color, $text);
+@mixin theme-color($param, $value) {
+  @each $theme, $color in $value {
+    @at-root .#{$theme} & {
+      #{$param}: #{$color};
+    }
+  }
+}
